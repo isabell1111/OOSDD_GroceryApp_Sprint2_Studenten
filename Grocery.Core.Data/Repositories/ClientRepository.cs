@@ -1,5 +1,4 @@
-﻿
-using Grocery.Core.Interfaces.Repositories;
+﻿using Grocery.Core.Interfaces.Repositories;
 using Grocery.Core.Models;
 
 namespace Grocery.Core.Data.Repositories
@@ -19,13 +18,13 @@ namespace Grocery.Core.Data.Repositories
 
         public Client? Get(string email)
         {
-            return clientList[0];
-        }
+            return clientList.FirstOrDefault(c => c.EmailAddress.Equals(email, StringComparison.OrdinalIgnoreCase));
+        }  //er wordt gezocht naar de client met een overeenkomend email adres.
 
         public Client? Get(int id)
         {
-            return clientList[0];
-        }
+            return clientList.FirstOrDefault(c => c.Id == id);
+        }// de juiste client met overeenkomende id wordt geretourneerd.
 
         public List<Client> GetAll()
         {

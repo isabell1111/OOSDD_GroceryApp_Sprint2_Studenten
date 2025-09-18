@@ -5,12 +5,11 @@ namespace Grocery.App
 {
     public partial class App : Application
     {
-        public App(/*LoginViewModel viewModel*/)
+        public App(LoginViewModel viewModel)// LoginViewModel viewModel wordt beschikbaar gemaakt.
         {
             InitializeComponent();
-
-            MainPage = new AppShell();
-            //MainPage = new LoginView(viewModel);
+            //AppShell wordt uitgeschakeld.
+            MainPage = new LoginView(viewModel);
         }
     }
 }
